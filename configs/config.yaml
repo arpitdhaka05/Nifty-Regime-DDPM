@@ -1,0 +1,52 @@
+# ============================================================
+# nifty-ddpm: Central Configuration
+# All magic numbers live here — change here, affects all notebooks
+# ============================================================
+
+data:
+  nifty_ticker: "^NSEI"
+  vix_ticker: "^INDIAVIX"
+  start_date: "2008-01-01"
+  end_date: "2026-07-01"
+  train_end_date: "2022-12-31"        # Chronological split — test = 2023 onwards
+  window_size: 64                     # Sliding window length in trading days
+  stride: 1                           # Overlap between windows
+  regime_method: "binary_median"      # Binary split at median train VIX
+  window_label: "avg_vix"             # Use avg VIX over window (not last-day)
+
+model:
+  channels: [64, 128, 256]            # U-Net encoder channel progression
+  embed_dim: 128                      # Sinusoidal time + VIX embedding dim
+  num_res_blocks: 2                   # ResBlocks per U-Net level
+  dropout: 0.1                        # Regularisation for small dataset
+  vix_mlp_hidden: 64                  # VIX embedding MLP hidden dim
+
+diffusion:
+  num_timesteps: 1000
+  beta_start: 0.0001
+  beta_end: 0.02
+  schedule: "linear"                  # Switch to "cosine" if quality is poor
+
+training:
+  batch_size: 64
+  lr: 0.0002                          # Adam optimizer
+  max_epochs: 1000                    # Hard safety cap
+  early_stop_patience: 50             # Stop if val loss doesn't improve for 50 epochs
+  val_fraction: 0.10                  # 10% of train windows for validation
+  ema_decay: 0.999
+  grad_clip_max_norm: 1.0
+  checkpoint_every: 50               # Save checkpoint every N epochs
+  seed: 42
+
+sampling:
+  num_samples: 500                    # Per regime class
+  cfg_drop_prob: 0.0                  # 0.0 = no CFG; set to 0.1 to enable
+  guidance_weight: 1.0               # 1.0 = standard conditional; >1 = CFG
+
+paths:
+  data_raw: "../data/raw"
+  data_processed: "../data/processed"
+  data_windows: "../data/windows"
+  outputs_checkpoints: "../outputs/checkpoints"
+  outputs_samples: "../outputs/samples"
+  outputs_figures: "../outputs/figures"

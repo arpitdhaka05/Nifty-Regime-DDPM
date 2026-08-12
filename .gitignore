@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+
+# ─── DATA (large / auto-downloaded) ──────────────────────────────────────────
+data/raw/
+data/windows/
+# Keep processed/ (norm_params.json, table1_stylized_facts.csv) — these are small & useful
+# data/processed/  ← intentionally NOT ignored
+
+# ─── MODEL CHECKPOINTS (large ~18MB each) ────────────────────────────────────
+outputs/checkpoints/
+
+# ─── SAMPLES (generated .pt tensors — ~130KB each, include them) ─────────────
+# outputs/samples/  ← intentionally NOT ignored — small and demonstrate real outputs
+
+# ─── FIGURES (keep all — these are the project's visual proof) ───────────────
+# outputs/figures/  ← intentionally NOT ignored
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace

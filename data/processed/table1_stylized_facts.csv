@@ -1,0 +1,5 @@
+Model,Mean (x10^-4),Std Dev,Skewness,Excess Kurtosis,Tail Index (Hill),ACF |r| (lag 1),ACF |r| (lag 5),Leverage Corr (lag 1),Avg Max Drawdown,KS Stat (vs Real),KS p-val,Ljung-Box p-val,ARCH-LM p-val
+Real,3.7469,0.0081,-0.4682,5.9848,2.8597,0.2462,0.0356,-0.0942,0.0618,0.0,1.0,0.0,0.0
+Uncond DDPM,5.7873,0.0109,0.2274,32.7986,2.5647,0.3035,0.2879,-0.0581,0.0738,0.0465,0.0,0.0,0.0
+Cond DDPM (Low Vol),3.9433,0.008,-2.6793,48.2002,2.5896,0.255,0.235,-0.0788,0.0586,0.0412,0.0,0.0,0.0
+Cond DDPM (High Vol),0.4556,0.0225,-0.1248,10.4013,2.7772,0.2656,0.2748,-0.0402,0.1895,0.1883,0.0,0.0,0.0
