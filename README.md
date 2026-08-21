@@ -4,7 +4,7 @@
 
 <br/>
 
-# 🧬 NIFTY-DDPM
+#  NIFTY-DDPM
 ### *Volatility-Regime-Conditioned Denoising Diffusion Probabilistic Models for Synthetic NIFTY50 Return Generation*
 
 <br/>
@@ -24,7 +24,7 @@
 
 ---
 
-## 📌 Research Question
+##  Research Question
 
 Standard generative models for financial time series treat all market conditions as a single distribution. In reality, equity markets exhibit **distinct structural regimes** — a calm trending market and a crisis-driven volatile market have fundamentally different return distributions, tail behaviour, and autocorrelation structures.
 
@@ -32,7 +32,7 @@ Standard generative models for financial time series treat all market conditions
 
 ---
 
-## 🔬 Key Design Choices
+##  Key Design Choices
 
 | Design Choice | Implementation |
 |--------------|---------------|
@@ -46,7 +46,7 @@ Standard generative models for financial time series treat all market conditions
 
 ---
 
-## 🧠 Architecture
+##  Architecture
 
 ### Data Pipeline → Model Conditioning
 
@@ -86,7 +86,7 @@ Reverse Process (Sampling):
 
 ---
 
-## 📊 Results — Stylized Facts Evaluation
+##  Results — Stylized Facts Evaluation
 
 Four distributions compared:
 
@@ -105,7 +105,7 @@ Four distributions compared:
 
 ---
 
-## 📈 Sample Outputs
+##  Sample Outputs
 
 **Return Distributions (KDE):**
 
@@ -129,7 +129,7 @@ Four distributions compared:
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 nifty-ddpm/
@@ -161,7 +161,7 @@ nifty-ddpm/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 git clone https://github.com/arpitdhaka05/nifty-regime-ddpm
@@ -199,7 +199,7 @@ diffusion:
 
 ---
 
-## 📚 References
+##  References
 
 1. Ho et al. (2020) — "Denoising Diffusion Probabilistic Models" — arXiv:2006.11239
 2. Cont (2001) — "Empirical properties of asset returns: stylized facts and statistical issues" — Quantitative Finance
